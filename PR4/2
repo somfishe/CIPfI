@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2</title> 
+</head>
+<body>   
+    <input id="coef1" type="text" value="1">
+    <input id="coef2" type="text" value="-5">
+    <input id="coef3" type="text" value="4">
+    <input type="button" onclick="FindRoot(coef1.value, coef2.value, coef3.value)">
+    <script>
+        let coef1 = document.querySelector('#coef1');
+        let coef2 = document.querySelector('#coef2');
+        let coef3 = document.querySelector('#coef3');
+        let dis, result;
+        function FindRoot(a, b, c){
+            let dis, result = [0, 0];
+            dis = b * b - 4 * a * c;
+            if(dis < 0) alert("No roots");
+            else if(dis == 0){
+                result[0] = (-1 * b) / (2 * a);
+                alert(result[0]);
+            }
+            else{
+                result[0] = (-1 * b + Math.sqrt(dis)) / (2 * a);
+                result[1] = (-1 * b - Math.sqrt(dis)) / (2 * a);
+                alert(result);
+            }
+        }
+    </script>
+</body>
+</html>
